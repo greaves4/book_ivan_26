@@ -1,0 +1,177 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": []
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Instrument Serif|Space Grotesk|JetBrains Mono))/i]",
+        "message": "Font not provided by the design system. Available: Instrument Serif, Space Grotesk, JetBrains Mono."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--accent",
+      "--accent-hover",
+      "--ash-300",
+      "--ash-500",
+      "--ash-700",
+      "--ash-900",
+      "--bg-canvas",
+      "--bg-inverse",
+      "--bone",
+      "--dur-fast",
+      "--dur-med",
+      "--dur-slow",
+      "--ease-in",
+      "--ease-out",
+      "--font-display",
+      "--font-mono",
+      "--font-ui",
+      "--fs-display-lg",
+      "--fs-display-md",
+      "--fs-display-sm",
+      "--fs-display-xl",
+      "--fs-mono-sm",
+      "--fs-mono-xs",
+      "--fs-ui-lg",
+      "--fs-ui-md",
+      "--fs-ui-sm",
+      "--ink",
+      "--ink-soft",
+      "--lh-body",
+      "--lh-snug",
+      "--lh-tight",
+      "--orange",
+      "--orange-bright",
+      "--orange-deep",
+      "--paper-100",
+      "--paper-200",
+      "--paper-50",
+      "--radius-0",
+      "--radius-1",
+      "--radius-pill",
+      "--rule",
+      "--rule-hair",
+      "--rule-thick",
+      "--scrim",
+      "--sp-1",
+      "--sp-2",
+      "--sp-3",
+      "--sp-4",
+      "--sp-5",
+      "--sp-6",
+      "--sp-7",
+      "--sp-8",
+      "--sp-9",
+      "--text-inverse",
+      "--text-muted",
+      "--text-primary",
+      "--tracking-display",
+      "--tracking-mono",
+      "--tracking-ui",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--ink": "color",
+      "--ink-soft": "color",
+      "--ash-900": "color",
+      "--ash-700": "color",
+      "--ash-500": "color",
+      "--ash-300": "color",
+      "--paper-200": "color",
+      "--paper-100": "color",
+      "--paper-50": "color",
+      "--bone": "color",
+      "--white": "color",
+      "--orange": "color",
+      "--orange-deep": "color",
+      "--orange-bright": "color",
+      "--bg-canvas": "color",
+      "--bg-inverse": "color",
+      "--text-primary": "font",
+      "--text-inverse": "font",
+      "--text-muted": "font",
+      "--accent": "color",
+      "--accent-hover": "color",
+      "--rule": "color",
+      "--scrim": "color",
+      "--font-display": "font",
+      "--font-ui": "font",
+      "--font-mono": "font",
+      "--fs-mono-xs": "spacing",
+      "--fs-mono-sm": "spacing",
+      "--fs-ui-sm": "spacing",
+      "--fs-ui-md": "spacing",
+      "--fs-ui-lg": "spacing",
+      "--fs-display-sm": "spacing",
+      "--fs-display-md": "spacing",
+      "--fs-display-lg": "spacing",
+      "--fs-display-xl": "spacing",
+      "--lh-tight": "other",
+      "--lh-snug": "other",
+      "--lh-body": "other",
+      "--tracking-mono": "font",
+      "--tracking-ui": "font",
+      "--tracking-display": "font",
+      "--sp-1": "spacing",
+      "--sp-2": "spacing",
+      "--sp-3": "spacing",
+      "--sp-4": "spacing",
+      "--sp-5": "spacing",
+      "--sp-6": "spacing",
+      "--sp-7": "spacing",
+      "--sp-8": "spacing",
+      "--sp-9": "spacing",
+      "--radius-0": "radius",
+      "--radius-1": "radius",
+      "--radius-pill": "radius",
+      "--rule-hair": "color",
+      "--rule-thick": "color",
+      "--dur-fast": "other",
+      "--dur-med": "other",
+      "--dur-slow": "other",
+      "--ease-out": "other",
+      "--ease-in": "other"
+    },
+    "fontFamilies": [
+      "Instrument Serif",
+      "JetBrains Mono",
+      "Space Grotesk"
+    ]
+  }
+}

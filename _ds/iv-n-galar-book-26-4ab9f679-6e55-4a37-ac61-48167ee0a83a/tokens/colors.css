@@ -1,0 +1,34 @@
+/* Iván Galar Book 26' — Colors
+ * Palette lifted from the cover collage: ink black, torn paper whites,
+ * a single hot orange, and ash grays for imagery.
+ */
+:root {
+  /* Base scale — from ink to paper */
+  --ink:            #0A0908;   /* pure ink black — text, phone chrome */
+  --ink-soft:       #1B1917;   /* softened ink for large fields */
+  --ash-900:        #2E2A26;
+  --ash-700:        #5A544D;
+  --ash-500:        #8B8680;   /* mid gray, b&w imagery mids */
+  --ash-300:        #BEB8AF;
+  --paper-200:      #DED8CC;   /* torn paper edge */
+  --paper-100:      #E9E3D6;   /* main paper tone */
+  --paper-50:       #F2ECDF;   /* highlight paper */
+  --bone:           #F7F2E7;
+  --white:          #FFFFFF;
+
+  /* Accent — the signature orange from the collage */
+  --orange:         #C24E2A;
+  --orange-deep:    #A83E20;
+  --orange-bright:  #E56338;
+
+  /* Semantic aliases */
+  --bg-canvas:      var(--paper-100);
+  --bg-inverse:     var(--ink);
+  --text-primary:   var(--ink);
+  --text-inverse:   var(--paper-50);
+  --text-muted:     var(--ash-700);
+  --accent:         var(--orange);
+  --accent-hover:   var(--orange-deep);
+  --rule:           var(--ash-900);
+  --scrim:          rgba(10, 9, 8, 0.6);
+}

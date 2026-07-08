@@ -1,0 +1,28 @@
+/* Iván Galar Book 26' — Spacing, radii, motion */
+:root {
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+
+  /* Radii — brutalist: mostly 0, phones use their own drawn radius */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-pill: 999px;
+
+  /* Rules — hairline dividers, no shadows */
+  --rule-hair: 1px solid var(--ink);
+  --rule-thick: 2px solid var(--ink);
+
+  /* Motion — slow, filmic. No bounce. */
+  --dur-fast:  180ms;
+  --dur-med:   420ms;
+  --dur-slow:  900ms;
+  --ease-out:  cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in:   cubic-bezier(0.6, 0, 0.9, 0.4);
+}

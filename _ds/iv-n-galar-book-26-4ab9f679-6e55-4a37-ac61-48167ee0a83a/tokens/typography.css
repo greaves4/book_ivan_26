@@ -1,0 +1,32 @@
+/* Iván Galar Book 26' — Typography
+ * Editorial brutalist stack: an italic serif for display marks (echoes the
+ * hand-lettered "Ivan Galar Book 26'" on the cover), a grotesk for UI copy,
+ * and a mono for tags, numbers and metadata (index numbers, dates, kerning
+ * against the collage).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --font-display:  'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --font-ui:       'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:     'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Type scale — brutalist: wide range, few sizes */
+  --fs-mono-xs:    11px;
+  --fs-mono-sm:    13px;
+  --fs-ui-sm:      14px;
+  --fs-ui-md:      16px;
+  --fs-ui-lg:      20px;
+  --fs-display-sm: 40px;
+  --fs-display-md: 72px;
+  --fs-display-lg: 128px;
+  --fs-display-xl: 200px;
+
+  /* Line + tracking */
+  --lh-tight:      0.95;
+  --lh-snug:       1.15;
+  --lh-body:       1.5;
+  --tracking-mono: 0.08em;   /* uppercase mono tags */
+  --tracking-ui:   0.01em;
+  --tracking-display: -0.02em;
+}
