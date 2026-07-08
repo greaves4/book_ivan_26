@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/gerardogreaves/Desktop/book_ivan_26 && exec /usr/bin/python3 -m http.server 4321"],
+      "port": 4321
+    }
+  ]
+}

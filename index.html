@@ -131,6 +131,32 @@
   .card-meta .idx .slash { color: var(--orange-bright); font-weight: 400; }
   .card-meta .tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid currentColor; padding: 4px 8px; }
 
+  /* ---------- VIDEO CARDS (phone mock) ---------- */
+  .card.video { background: transparent; overflow: visible; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .phone {
+    position: relative; height: 100%; aspect-ratio: 9 / 19.5; max-width: 100%;
+    background: var(--ink); border-radius: 30px; padding: 7px;
+    box-shadow: 0 22px 50px rgba(10,9,8,0.35), inset 0 0 0 1px rgba(233,227,214,0.06);
+  }
+  .phone::after {
+    content: ''; position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+    width: 42%; height: 19px; background: var(--ink); border-radius: 0 0 14px 14px; z-index: 3;
+  }
+  .phone .screen { position: relative; width: 100%; height: 100%; border-radius: 24px; overflow: hidden; background: #000; }
+  .card.video .play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 62px; height: 62px; border-radius: 50%; z-index: 4; pointer-events: none;
+    background: rgba(10,9,8,0.5); border: 1px solid rgba(242,236,223,0.55);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .3s ease, transform .3s ease; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  }
+  .card.video:hover .play { background: var(--orange); border-color: var(--orange); transform: translate(-50%,-50%) scale(1.08); }
+  .card.video .play::after {
+    content: ''; margin-left: 4px;
+    border-style: solid; border-width: 10px 0 10px 17px;
+    border-color: transparent transparent transparent var(--paper-50);
+  }
+
   /* ---------- CONTACT ---------- */
   #contact { padding-bottom: 60px; }
   #contact .headline {
@@ -153,6 +179,7 @@
     padding: 60px;
   }
   .lb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .lb video { max-width: 100%; max-height: 100%; object-fit: contain; background: #000; border-radius: 4px; }
   .lb .lb-meta {
     position: absolute; top: 0; left: 0; right: 0; padding: 24px 32px;
     display: flex; justify-content: space-between; align-items: center;
@@ -404,6 +431,43 @@
         <img loading="lazy" src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_018_1920x1080.webp" alt="Arte celular vertical 18">
       </a>
   </div>
+
+  <div class="series-head" style="margin-top:80px">
+    <h3>Serie C <span class="o">/</span> Video</h3>
+    <div class="count"><b>6</b> piezas <span class="o">·</span> video</div>
+  </div>
+  <div class="grid-v">
+      <a class="card v video" href="#w-c1" data-idx="01" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">01 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/jolion.webp" alt="Video 1 — GWM Jolion"></span></span>
+        <span class="play"></span>
+      </a>
+      <a class="card v video" href="#w-c2" data-idx="02" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">02 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/tankilo.webp" alt="Video 2 — Tankilo"></span></span>
+        <span class="play"></span>
+      </a>
+      <a class="card v video" href="#w-c3" data-idx="03" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">03 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/estacionamiento.webp" alt="Video 3 — Estacionamiento autónomo"></span></span>
+        <span class="play"></span>
+      </a>
+      <a class="card v video" href="#w-c4" data-idx="04" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">04 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/artboard-12.webp" alt="Video 4"></span></span>
+        <span class="play"></span>
+      </a>
+      <a class="card v video" href="#w-c5" data-idx="05" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">05 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/artboard-18.webp" alt="Video 5"></span></span>
+        <span class="play"></span>
+      </a>
+      <a class="card v video" href="#w-c6" data-idx="06" data-total="06" data-series="V">
+        <span class="card-meta"><span class="idx">06 <span class="slash">/</span> 06</span><span class="tag">Video</span></span>
+        <span class="phone"><span class="screen"><img loading="lazy" src="assets/video/posters/inmark.webp" alt="Video 6 — Inmark"></span></span>
+        <span class="play"></span>
+      </a>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -434,6 +498,7 @@
     <span id="lb-series">Serie A · Horizontal</span>
   </div>
   <img id="lb-img" alt="">
+  <video id="lb-video" controls playsinline preload="metadata" style="display:none"></video>
   <div class="lb-foot">
     <span>Iván Galar · Book 26'</span>
     <div class="arrows">
@@ -444,7 +509,7 @@
 </div>
 
 <div style="display:none" id="lb-data">
-  <figure id="w-h1" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_001_1920x1080.webp" data-idx="01" data-total="12" data-series="Horizontal"></figure><figure id="w-h2" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_002_1920x1080.webp" data-idx="02" data-total="12" data-series="Horizontal"></figure><figure id="w-h3" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_003_1920x1080.webp" data-idx="03" data-total="12" data-series="Horizontal"></figure><figure id="w-h4" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_004_1920x1080.webp" data-idx="04" data-total="12" data-series="Horizontal"></figure><figure id="w-h5" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_005_1920x1080.webp" data-idx="05" data-total="12" data-series="Horizontal"></figure><figure id="w-h6" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_006_1920x1080.webp" data-idx="06" data-total="12" data-series="Horizontal"></figure><figure id="w-h7" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_007_1920x1080.webp" data-idx="07" data-total="12" data-series="Horizontal"></figure><figure id="w-h8" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_008_1920x1080.webp" data-idx="08" data-total="12" data-series="Horizontal"></figure><figure id="w-h9" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_009_1920x1080.webp" data-idx="09" data-total="12" data-series="Horizontal"></figure><figure id="w-h10" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_010_1920x1080.webp" data-idx="10" data-total="12" data-series="Horizontal"></figure><figure id="w-h11" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_011_1920x1080.webp" data-idx="11" data-total="12" data-series="Horizontal"></figure><figure id="w-h12" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_012_1920x1080.webp" data-idx="12" data-total="12" data-series="Horizontal"></figure><figure id="w-v1" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_001_1920x1080.webp" data-idx="01" data-total="18" data-series="Vertical"></figure><figure id="w-v2" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_002_1920x1080.webp" data-idx="02" data-total="18" data-series="Vertical"></figure><figure id="w-v3" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_003_1920x1080.webp" data-idx="03" data-total="18" data-series="Vertical"></figure><figure id="w-v4" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_004_1920x1080.webp" data-idx="04" data-total="18" data-series="Vertical"></figure><figure id="w-v5" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_005_1920x1080.webp" data-idx="05" data-total="18" data-series="Vertical"></figure><figure id="w-v6" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_006_1920x1080.webp" data-idx="06" data-total="18" data-series="Vertical"></figure><figure id="w-v7" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_007_1920x1080.webp" data-idx="07" data-total="18" data-series="Vertical"></figure><figure id="w-v8" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_008_1920x1080.webp" data-idx="08" data-total="18" data-series="Vertical"></figure><figure id="w-v9" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_009_1920x1080.webp" data-idx="09" data-total="18" data-series="Vertical"></figure><figure id="w-v10" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_010_1920x1080.webp" data-idx="10" data-total="18" data-series="Vertical"></figure><figure id="w-v11" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_011_1920x1080.webp" data-idx="11" data-total="18" data-series="Vertical"></figure><figure id="w-v12" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_012_1920x1080.webp" data-idx="12" data-total="18" data-series="Vertical"></figure><figure id="w-v13" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_013_1920x1080.webp" data-idx="13" data-total="18" data-series="Vertical"></figure><figure id="w-v14" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_014_1920x1080.webp" data-idx="14" data-total="18" data-series="Vertical"></figure><figure id="w-v15" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_015_1920x1080.webp" data-idx="15" data-total="18" data-series="Vertical"></figure><figure id="w-v16" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_016_1920x1080.webp" data-idx="16" data-total="18" data-series="Vertical"></figure><figure id="w-v17" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_017_1920x1080.webp" data-idx="17" data-total="18" data-series="Vertical"></figure><figure id="w-v18" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_018_1920x1080.webp" data-idx="18" data-total="18" data-series="Vertical"></figure>
+  <figure id="w-h1" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_001_1920x1080.webp" data-idx="01" data-total="12" data-series="Horizontal"></figure><figure id="w-h2" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_002_1920x1080.webp" data-idx="02" data-total="12" data-series="Horizontal"></figure><figure id="w-h3" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_003_1920x1080.webp" data-idx="03" data-total="12" data-series="Horizontal"></figure><figure id="w-h4" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_004_1920x1080.webp" data-idx="04" data-total="12" data-series="Horizontal"></figure><figure id="w-h5" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_005_1920x1080.webp" data-idx="05" data-total="12" data-series="Horizontal"></figure><figure id="w-h6" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_006_1920x1080.webp" data-idx="06" data-total="12" data-series="Horizontal"></figure><figure id="w-h7" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_007_1920x1080.webp" data-idx="07" data-total="12" data-series="Horizontal"></figure><figure id="w-h8" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_008_1920x1080.webp" data-idx="08" data-total="12" data-series="Horizontal"></figure><figure id="w-h9" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_009_1920x1080.webp" data-idx="09" data-total="12" data-series="Horizontal"></figure><figure id="w-h10" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_010_1920x1080.webp" data-idx="10" data-total="12" data-series="Horizontal"></figure><figure id="w-h11" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_011_1920x1080.webp" data-idx="11" data-total="12" data-series="Horizontal"></figure><figure id="w-h12" data-src="assets/works/002-BACK_ARTE_CELULAR_HORIZONTAL_012_1920x1080.webp" data-idx="12" data-total="12" data-series="Horizontal"></figure><figure id="w-v1" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_001_1920x1080.webp" data-idx="01" data-total="18" data-series="Vertical"></figure><figure id="w-v2" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_002_1920x1080.webp" data-idx="02" data-total="18" data-series="Vertical"></figure><figure id="w-v3" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_003_1920x1080.webp" data-idx="03" data-total="18" data-series="Vertical"></figure><figure id="w-v4" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_004_1920x1080.webp" data-idx="04" data-total="18" data-series="Vertical"></figure><figure id="w-v5" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_005_1920x1080.webp" data-idx="05" data-total="18" data-series="Vertical"></figure><figure id="w-v6" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_006_1920x1080.webp" data-idx="06" data-total="18" data-series="Vertical"></figure><figure id="w-v7" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_007_1920x1080.webp" data-idx="07" data-total="18" data-series="Vertical"></figure><figure id="w-v8" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_008_1920x1080.webp" data-idx="08" data-total="18" data-series="Vertical"></figure><figure id="w-v9" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_009_1920x1080.webp" data-idx="09" data-total="18" data-series="Vertical"></figure><figure id="w-v10" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_010_1920x1080.webp" data-idx="10" data-total="18" data-series="Vertical"></figure><figure id="w-v11" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_011_1920x1080.webp" data-idx="11" data-total="18" data-series="Vertical"></figure><figure id="w-v12" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_012_1920x1080.webp" data-idx="12" data-total="18" data-series="Vertical"></figure><figure id="w-v13" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_013_1920x1080.webp" data-idx="13" data-total="18" data-series="Vertical"></figure><figure id="w-v14" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_014_1920x1080.webp" data-idx="14" data-total="18" data-series="Vertical"></figure><figure id="w-v15" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_015_1920x1080.webp" data-idx="15" data-total="18" data-series="Vertical"></figure><figure id="w-v16" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_016_1920x1080.webp" data-idx="16" data-total="18" data-series="Vertical"></figure><figure id="w-v17" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_017_1920x1080.webp" data-idx="17" data-total="18" data-series="Vertical"></figure><figure id="w-v18" data-src="assets/works/003-BACK_ARTE_CELULAR_VERTICAL_018_1920x1080.webp" data-idx="18" data-total="18" data-series="Vertical"></figure><figure id="w-c1" data-type="video" data-src="assets/video/jolion.mp4" data-poster="assets/video/posters/jolion.webp" data-idx="01" data-total="06" data-series="Video"></figure><figure id="w-c2" data-type="video" data-src="assets/video/tankilo.mp4" data-poster="assets/video/posters/tankilo.webp" data-idx="02" data-total="06" data-series="Video"></figure><figure id="w-c3" data-type="video" data-src="assets/video/estacionamiento.mp4" data-poster="assets/video/posters/estacionamiento.webp" data-idx="03" data-total="06" data-series="Video"></figure><figure id="w-c4" data-type="video" data-src="assets/video/artboard-12.mp4" data-poster="assets/video/posters/artboard-12.webp" data-idx="04" data-total="06" data-series="Video"></figure><figure id="w-c5" data-type="video" data-src="assets/video/artboard-18.mp4" data-poster="assets/video/posters/artboard-18.webp" data-idx="05" data-total="06" data-series="Video"></figure><figure id="w-c6" data-type="video" data-src="assets/video/inmark.mp4" data-poster="assets/video/posters/inmark.webp" data-idx="06" data-total="06" data-series="Video"></figure>
 </div>
 
 <script>
@@ -463,16 +528,30 @@
   (function(){
     const lb = document.getElementById('lb');
     const img = document.getElementById('lb-img');
+    const videoEl = document.getElementById('lb-video');
     const idxEl = document.getElementById('lb-idx');
     const serEl = document.getElementById('lb-series');
     const figures = [...document.querySelectorAll('#lb-data figure')];
     let cur = 0;
+    const serieLetter = { Horizontal: 'A', Vertical: 'B', Video: 'C' };
     function show(i){
       cur = (i + figures.length) % figures.length;
       const f = figures[cur];
-      img.src = f.dataset.src;
+      videoEl.pause();
+      if(f.dataset.type === 'video'){
+        img.removeAttribute('src'); img.style.display = 'none';
+        videoEl.style.display = '';
+        videoEl.poster = f.dataset.poster || '';
+        videoEl.src = f.dataset.src;
+        videoEl.currentTime = 0;
+        videoEl.play().catch(() => {});
+      } else {
+        videoEl.removeAttribute('src'); videoEl.load(); videoEl.style.display = 'none';
+        img.style.display = '';
+        img.src = f.dataset.src;
+      }
       idxEl.innerHTML = f.dataset.idx + ' <span class="slash">/</span> ' + f.dataset.total;
-      serEl.textContent = 'Serie ' + (f.dataset.series === 'Horizontal' ? 'A' : 'B') + ' · ' + f.dataset.series;
+      serEl.textContent = 'Serie ' + (serieLetter[f.dataset.series] || 'B') + ' · ' + f.dataset.series;
     }
     function open(id){
       const i = figures.findIndex(f => f.id === id);
@@ -483,6 +562,8 @@
       document.body.style.overflow = 'hidden';
     }
     function close(){
+      videoEl.pause();
+      videoEl.removeAttribute('src'); videoEl.load();
       lb.classList.add('lb-hidden');
       lb.setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
